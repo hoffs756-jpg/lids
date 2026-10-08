@@ -61,7 +61,7 @@ const tip=$("#tip");
 addEventListener("pointermove",e=>{tip.style.transform=`translate(${e.clientX+14}px,${e.clientY+16}px)`});
 document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]"),on=c&&!c.classList.contains("dim")&&!drag&&!$("#det").classList.contains("open");tip.classList.toggle("on",!!on);if(c)tip.textContent=D[c.dataset.i][0]+", "+D[c.dataset.i][5]});
 // hover label
-document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]");$("#hov").textContent=c?`${id(+c.dataset.i)} ${D[c.dataset.i][0]}`:"Index d'objets"});
+document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]");$("#hov").textContent=c?`${id(+c.dataset.i)} ${D[c.dataset.i][0]}`:"lids"});
 // detail
 let cur=0;
 function show(i){cur=i;const p=D[i];$("#big").style.setProperty("--bc",p[1]+"33");$("#big").innerHTML=jar(p,1);
