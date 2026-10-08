@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lid collection</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Index de bocaux: Jars &amp; Lids</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>blah blah blah</h1>
-    <p>This is a simple paragraph of text on a basic HTML page.</p>
-
+<div class="bar"><span>BDL</span><span>Jars &amp; Lids</span><span>Index d'objets</span><span id="dt"></span></div>
+<nav id="nav" aria-label="Controls">
+<button data-v="index" aria-pressed="true">Index</button><button data-v="sphere" aria-pressed="false">Sphere</button><button data-v="cyl" aria-pressed="false">Cylinder</button><i></i>
+<button data-f="all" aria-pressed="true">All lids</button><button data-f="twist" aria-pressed="false">Twist</button><button data-f="clamp" aria-pressed="false">Clamp</button><button data-f="cork" aria-pressed="false">Cork</button><button data-f="cloth" aria-pressed="false">Cloth</button><input id="q" type="search" placeholder="Search jars" aria-label="Search jars">
+</nav>
+<main><div id="index"></div><div id="stage"><div id="world"></div></div></main>
+<div id="tip"></div><footer><span id="bil">Bilan (24/24)</span><span id="hov">Index d'objets</span><span>00.00-00.00.0000</span></footer>
+<div id="det" role="dialog" aria-modal="true" aria-label="Product"><button class="x" id="cl">Close</button><div class="in"><div id="big"></div><div id="txt"></div></div></div>
+<script src="main.js"></script>
 </body>
 </html>
