@@ -36,7 +36,7 @@ $("#dt").textContent=new Date().toLocaleDateString("fr-CH").replace(/\//g,".");
 D.forEach((p,i)=>{const e=document.createElement("div");e.className="cell";e.tabIndex=0;e.dataset.l=p[2];e.dataset.i=i;e.style.setProperty("--n",i);e.innerHTML=`<b>${id(i)}</b><div class="p">${jar(p)}</div>`;idx.append(e)});
 // 3D
 let ry=0,rx=-8,vy=.25,drag=0,moved=0,view="index",ox,oy;
-const prompts=["a jar of fig jam with a red lid.","a clamp jar of beets on a shelf.","a cork stopper in a green olive jar.","a gingham cloth tied over apricots.","a small red block on a table."];
+const prompts=["blah blah blah blah put somthing here","blah blah blah blah put somthing here","blah blah blah blah put somthing here","blah blah blah blah put somthing here","blah blah blah blah put somthing here"];
 function build(v){world.innerHTML="";const n=D.length;
 if(v=="sphere"){D.forEach((p,i)=>{const phi=Math.acos(1-2*(i+.5)/n),th=Math.PI*(1+Math.sqrt(5))*i,t=document.createElement("div");t.className="t";t.dataset.l=p[2];t.dataset.i=i;t.innerHTML=jar(p);
 t.style.transform=`rotateY(${th*180/Math.PI}deg) rotateX(${90-phi*180/Math.PI}deg) translateZ(${Math.min(innerWidth,innerHeight)*.34}px)`;world.append(t)})}
