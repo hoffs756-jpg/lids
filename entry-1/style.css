@@ -69,4 +69,17 @@ input::placeholder{color:var(--mut)}
 #txt>:nth-child(1){animation-delay:.45s}#txt>:nth-child(2){animation-delay:.55s}#txt>:nth-child(3){animation-delay:.65s}#txt>:nth-child(4){animation-delay:.75s}#txt>:nth-child(n+5){animation-delay:.85s}
 dd{transition:padding-left .2s}dl dt:hover+dd{padding-left:8px}
 @media (prefers-reduced-motion:reduce){#det{transition:none}*{animation:none!important;transition:none!important}}
-.cell img,.t img{width:78%;height:auto;display:block}#big img{width:min(60vw,420px);height:auto;animation:set .8s .35s cubic-bezier(.2,.8,.2,1) both}.mini img{width:100%;cursor:pointer;opacity:.5}
+
+/* images */
+.cell img,.t img{width:78%;height:auto;display:block;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.cell:hover img{transform:translateY(-4px) scale(1.06)}
+#big img{width:min(60vw,420px);height:auto;animation:set .8s .35s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 30px 24px #0003)}
+.mini img{width:100%;cursor:pointer;opacity:.5}
+.mini img:hover{opacity:1}
+
+/* NEW: any image, square or not, gets center-cropped to a circle */
+.cell img,.t img,#big img,.mini img{
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:50%;
+}
