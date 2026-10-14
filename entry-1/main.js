@@ -54,7 +54,7 @@ addEventListener("pointerup",()=>{drag=0;vy=Math.max(-.6,Math.min(.6,vy))||.25})
 document.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{view=b.dataset.v;document.querySelectorAll("[data-v]").forEach(x=>x.setAttribute("aria-pressed",x==b));
 idx.style.display=view=="index"?"grid":"none";st.style.display=view=="index"?"none":"block";if(view!="index"){build(view);filt(F)}});
 let F="all",Q="";
-function filt(f){F=f;let c=0;document.querySelectorAll("[data-l]").forEach(e=>{const m=(f=="all"||e.dataset.l==f)&&D[e.dataset.i][0].toLowerCase().includes(Q);e.classList.toggle("dim",!m);if(m&&e.classList.contains("cell"))c++});$("#bil").textContent=`Bilan (${c}/${D.length})`}
+function filt(f){F=f;let c=0;document.querySelectorAll("[data-l]").forEach(e=>{const m=(f=="all"||e.dataset.l==f)&&D[e.dataset.i][0].toLowerCase().includes(Q);e.classList.toggle("dim",!m);if(m&&e.classList.contains("cell"))c++});$("#bil").textContent=`NYC (${c}/${D.length})`}
 document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{document.querySelectorAll("[data-f]").forEach(x=>x.setAttribute("aria-pressed",x==b));filt(b.dataset.f)});
 $("#q").oninput=e=>{Q=e.target.value.toLowerCase().trim();filt(F)};
 const tip=$("#tip");
