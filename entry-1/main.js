@@ -3,7 +3,7 @@
 // The filter buttons match words in the image filename (plaid, red, van, black, white, silver, green, santa).
 // The filenames below are placeholders: rename your files to match, or edit the paths.
 const D=[
-["apple lid","#5b2a4a","twist","#c8102e","round","250 ml","idk","somthing here","somthing here","apple_red_lid.jpg"],
+["apple lid","#5b2a4a","twist","#c8102e","round","250 ml","idk","somthing here","somthing here","/apple_red_lid.jpg"],
 ["mystery lid","#e0a21b","twist","#1a1a1a","squat","340 g","idk","somthing here","somthing here","black_lid.jpg"],
 ["keep cold","#8a9a3b","twist","#d9d2bf","tall","500 ml","idk","somthing here","somthing here","blue_lid.jpg"],
 ["spicy","#e8892a","cloth","#b3261e","round","220 ml","idk","somthing here","somthing here","chili_red_lid.jpg"],
@@ -31,7 +31,7 @@ const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when 
 const id=n=>"#"+String(n+1).padStart(3,"0");
 // Shows the image if p[9] exists, otherwise falls back to the colored circle.
 function jar(p,k){
-  if(p[9])return `<img src="${p[9]}" alt="${p[0]}">`;
+  if(p[9])return `<img src="images/${p[9]}" alt="${p[0]}">`;
   return `<svg viewBox="0 0 100 100" ${k?'role="img" aria-label="'+p[0]+'"':'aria-hidden="true"'}><circle cx="50" cy="50" r="44" fill="${p[1]}" stroke="${p[3]}" stroke-width="6"/></svg>`;
 }
 // CHANGED: filter key is now the lowercase image filename instead of the lid type
