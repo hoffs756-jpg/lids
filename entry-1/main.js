@@ -24,7 +24,8 @@ const D=[
 ["from the sea","clamp","tall","800 ml","idk","somthing here","somthing here","sturgon_santa_white.jpg"],
 ["blue ice","twist","round","300 g","idk","somthing here","somthing here","van_blue_lid.jpg"],
 ["grey ice","twist","squat","100 g","idk","somthing here","somthing here","van_grey_lid.jpg"],
-["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"]];
+["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"],
+["beach green","twist","round","250 g","idk","somthing here","somthing here","beach_green_lid.jpg"]];
 const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when sealed.",clamp:"Wire bail clamp over a rubber gasket. Lifts open, reseals airtight.",cork:"Natural cork stopper pushed into the neck. Not airtight; use within weeks.",cloth:"Fabric cover tied with string over a waxed disc. Traditional, short-term."};
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
