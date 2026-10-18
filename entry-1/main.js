@@ -24,7 +24,8 @@ const D=[
 ["from the sea","clamp","tall","800 ml","idk","somthing here","somthing here","sturgon_santa_white.jpg"],
 ["blue ice","twist","round","300 g","idk","somthing here","somthing here","van_blue_lid.jpg"],
 ["grey ice","twist","squat","100 g","idk","somthing here","somthing here","van_grey_lid.jpg"],
-["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"]];
+["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"],
+["beach green","twist","round","250 g","idk","somthing here","somthing here","beach_green_lid.jpg"]];
 const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when sealed.",clamp:"Wire bail clamp over a rubber gasket. Lifts open, reseals airtight.",cork:"Natural cork stopper pushed into the neck. Not airtight; use within weeks.",cloth:"Fabric cover tied with string over a waxed disc. Traditional, short-term."};
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
@@ -32,10 +33,8 @@ const LONG=[
 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
 "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."];
-// Text shown on the sphere tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
-const sphereText=["fill in text 1","fill in text 2","fill in text 3","fill in text 4","fill in text 5","fill in text 6"];
-// Text shown on the cylinder's top ring.
-const prompts=["blah blah blah put somthing here","blah blah blah put somthing here","blah blah blah put somthing here","blah blah blah put somthing here","blah blah blah put somthing here"];
+// Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
+const cylText=["fill in text 1","fill in text 2","fill in text 3","fill in text 4","fill in text 5","fill in text 6"];
 const id=n=>"#"+String(n+1).padStart(3,"0");
 const jar=p=>`<img src="images/${p[7]}" alt="${p[0]}">`;
 // filter key is the lowercase image filename
@@ -47,16 +46,15 @@ D.forEach((p,i)=>{const e=document.createElement("div");e.className="cell";e.tab
 let ry=0,rx=-8,vy=.25,drag=0,moved=0,view="index",ox,oy;
 function build(v){world.innerHTML="";const n=D.length;
 if(v=="sphere"){
-// text-only sphere: one text tile per jar
-for(let k=0;k<n;k++){const phi=Math.acos(1-2*(k+.5)/n),th=Math.PI*(1+Math.sqrt(5))*k,t=document.createElement("div");
-t.className="t tx sm";t.textContent=sphereText[k%sphereText.length];
-t.style.transform=`rotateY(${th*180/Math.PI}deg) rotateX(${90-phi*180/Math.PI}deg) translateZ(${Math.min(innerWidth,innerHeight)*.34}px)`;world.append(t)}}
+// sphere: circle-cropped images, one per jar
+D.forEach((p,k)=>{const phi=Math.acos(1-2*(k+.5)/n),th=Math.PI*(1+Math.sqrt(5))*k,t=document.createElement("div");
+t.className="t";t.dataset.l=key(p);t.dataset.i=k;t.innerHTML=jar(p);
+t.style.transform=`rotateY(${th*180/Math.PI}deg) rotateX(${90-phi*180/Math.PI}deg) translateZ(${Math.min(innerWidth,innerHeight)*.34}px)`;world.append(t)})}
 else{
-// cylinder: works with any count. 7 per ring, last ring is partial.
+// cylinder: text only, one tile per jar. 7 per ring, last ring is partial.
 const per=7,R=Math.max(240,per*46/6.28);
 for(let i=0;i<n;i++){const r=Math.floor(i/per),k=i%per,t=document.createElement("div"),a=k*360/per+r*8;
-t.className="t";t.dataset.l=key(D[i]);t.dataset.i=i;t.innerHTML=jar(D[i]);t.style.transform=`translateY(${(r-1.5)*118}px) rotateY(${a}deg) translateZ(${R}px)`;world.append(t)}
-for(let k=0;k<7;k++){const t=document.createElement("div");t.className="t tx";t.textContent=prompts[k%5];t.style.transform=`translateY(${-2.5*118}px) rotateY(${k*360/7}deg) translateZ(${R+10}px)`;world.append(t)}}}
+t.className="t tx sm";t.textContent=cylText[i%cylText.length];t.style.transform=`translateY(${(r-1.5)*118}px) rotateY(${a}deg) translateZ(${R}px)`;world.append(t)}}}
 function loop(){if(view!="index"){if(!drag){vy+=(.25-vy)*.015;ry+=vy}world.style.transform=`translateZ(${view=="cyl"?-140:0}px) rotateX(${view=="cyl"?-18:rx}deg) rotateY(${ry}deg)`}requestAnimationFrame(loop)}loop();
 const st=$("#stage");
 st.onpointerdown=e=>{drag=1;moved=0;ox=e.clientX;oy=e.clientY};
