@@ -24,8 +24,7 @@ const D=[
 ["from the sea","clamp","tall","800 ml","idk","somthing here","somthing here","sturgon_santa_white.jpg"],
 ["blue ice","twist","round","300 g","idk","somthing here","somthing here","van_blue_lid.jpg"],
 ["grey ice","twist","squat","100 g","idk","somthing here","somthing here","van_grey_lid.jpg"],
-["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"],
-["beach green","twist","round","250 g","idk","somthing here","somthing here","beach_green_lid.jpg"]];
+["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"]];
 const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when sealed.",clamp:"Wire bail clamp over a rubber gasket. Lifts open, reseals airtight.",cork:"Natural cork stopper pushed into the neck. Not airtight; use within weeks.",cloth:"Fabric cover tied with string over a waxed disc. Traditional, short-term."};
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
@@ -97,3 +96,18 @@ $("#cl").onclick=close;addEventListener("keydown",e=>{if(e.key=="Escape")close()
 document.addEventListener("click",e=>{const c=e.target.closest(".cell,.t[data-i]");if(c&&!c.classList.contains("dim")&&moved<6)open(+c.dataset.i,c)});
 // set the count in the footer on load
 filt("all");
+
+// cover (jar lid) + intro page
+// Cover: "Enter index" opens the lid straight into the site. "Intro" opens the lid onto the intro page,
+// which has its own "Continue to index" and "Back" (closes the lid again). The nav "About" button brings the lid back.
+const cover=$("#cover"),intro=$("#intro"),T=950;
+let tm;const later=f=>{clearTimeout(tm);tm=setTimeout(f,T)};
+const lock=on=>{document.body.style.overflow=on?"hidden":"";document.querySelectorAll(".bar,nav,main,footer").forEach(e=>e.inert=on)};
+$("#cn").textContent=D.length;
+lock(true);
+$("#go").onclick=()=>{cover.classList.add("open");later(()=>lock(false))};
+$("#gi").onclick=()=>{intro.classList.remove("open");intro.hidden=false;intro.scrollTop=0;void intro.offsetWidth;cover.classList.add("open");later(()=>$("#ic").focus())};
+const toSite=()=>{intro.classList.add("open");later(()=>{lock(false);intro.hidden=true})};
+$("#ic").onclick=$("#ic2").onclick=toSite;
+$("#ib").onclick=()=>{cover.classList.remove("open");later(()=>{intro.hidden=true})};
+$("#about").onclick=()=>{lock(true);intro.hidden=true;scrollTo(0,0);cover.classList.remove("open")};

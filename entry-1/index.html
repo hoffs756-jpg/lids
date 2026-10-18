@@ -9,13 +9,38 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- COVER: the jar lid. Opens like a lid into the site. -->
+<section class="cover" id="cover" aria-label="About">
+<div class="cover-bg"></div>
+<div class="lid">
+<div class="lid-in">
+<div class="lid-k">SHI / <span id="cn">23</span> lids</div>
+<h1>Jars &amp; Lids</h1>
+<p>About text goes here. A collection of jars and the lids that came with them. Placeholder: who started it, why, and what to look for.</p>
+<div class="lid-b"><button id="go">Enter index</button><button id="gi">Intro</button></div>
+</div>
+</div>
+</section>
+<!-- INTRO: placeholder info page, reached from the cover -->
+<section class="intro" id="intro" hidden aria-label="Intro">
+<div class="intro-bar"><button id="ib">&larr; Back</button><button id="ic">Continue to index &rarr;</button></div>
+<div class="intro-in">
+<div>about / 00.00.0000</div>
+<h2>Intro</h2>
+<p>Placeholder intro. Replace this with a short introduction to the collection: what it is, how it started, and how to use the site. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<dl><dt>Collection</dt><dd>placeholder</dd><dt>Started</dt><dd>00.00.0000</dd><dt>Location</dt><dd>idk</dd><dt>Curator</dt><dd>somthing here</dd></dl>
+<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+<button id="ic2">Continue to index</button>
+</div>
+</section>
 <div class="bar"><span>SHI</span><span>Jars &amp; Lids</span><span>Lids &amp; Jads</span><span id="dt"></span></div>
 <nav id="nav" aria-label="Controls">
-<button data-v="index" aria-pressed="true">Index</button><button data-v="sphere" aria-pressed="false">Sphere</button><button data-v="cyl" aria-pressed="false">Cylinder</button><i></i>
+<button id="about">About</button><i></i><button data-v="index" aria-pressed="true">Index</button><button data-v="sphere" aria-pressed="false">Sphere</button><button data-v="cyl" aria-pressed="false">Cylinder</button><i></i>
 <button data-f="all" aria-pressed="true">All lids</button><button data-f="plaid" aria-pressed="false">Plaid</button><button data-f="red" aria-pressed="false">Red</button><button data-f="van" aria-pressed="false">Van</button><button data-f="black" aria-pressed="false">Black</button><button data-f="white" aria-pressed="false">White</button><button data-f="silver" aria-pressed="false">Silver</button><button data-f="green" aria-pressed="false">Green</button><button data-f="santa" aria-pressed="false">Santa</button><input id="q" type="search" placeholder="Search jars" aria-label="Search jars">
 </nav>
 <main><div id="index"></div><div id="stage"><div id="world"></div></div></main>
-<div id="tip"></div><footer><span id="bil">(24/24)</span><span id="hov">Index</span><span>00.00-00.00.0000</span></footer>
+<div id="tip"></div><footer><span id="bil">(23/23)</span><span id="hov">Index</span><span>00.00-00.00.0000</span></footer>
 <div id="det" role="dialog" aria-modal="true" aria-label="Product"><button class="x" id="cl">Close</button><div class="mini" id="mini" aria-label="Jump to another jar"></div><div class="in"><div id="big"></div><div id="txt"></div></div></div>
 <script src="main.js"></script>
 </body>
