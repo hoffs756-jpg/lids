@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>lid collection</title>
-  <link rel="icon" type="image/x-icon" href="rainbow.png">
+<link rel="icon" type="image/png" href="rainbow.png">
+<link rel="apple-touch-icon" href="rainbow.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="bar"><span>SHI</span><span>Jars &amp; Lids</span><span>Lids &amp; Jads</span><span id="dt"></span></div>
 <nav id="nav" aria-label="Controls">
 <button data-v="index" aria-pressed="true">Index</button><button data-v="sphere" aria-pressed="false">Sphere</button><button data-v="cyl" aria-pressed="false">Cylinder</button><i></i>
-<!-- CHANGED: filters now match words in the image filename -->
 <button data-f="all" aria-pressed="true">All lids</button><button data-f="plaid" aria-pressed="false">Plaid</button><button data-f="red" aria-pressed="false">Red</button><button data-f="van" aria-pressed="false">Van</button><button data-f="black" aria-pressed="false">Black</button><button data-f="white" aria-pressed="false">White</button><button data-f="silver" aria-pressed="false">Silver</button><button data-f="green" aria-pressed="false">Green</button><button data-f="santa" aria-pressed="false">Santa</button><input id="q" type="search" placeholder="Search jars" aria-label="Search jars">
 </nav>
 <main><div id="index"></div><div id="stage"><div id="world"></div></div></main>
-<div id="tip"></div><footer><span id="bil">(25/25)</span><span id="hov">Index</span><span>00.00-00.00.0000</span></footer>
-<div id="det" role="dialog" aria-modal="true" aria-label="Product"><button class="x" id="cl">Close</button><div class="in"><div id="big"></div><div id="txt"></div></div></div>
+<div id="tip"></div><footer><span id="bil">(23/23)</span><span id="hov">Index</span><span>00.00-00.00.0000</span></footer>
+<div id="det" role="dialog" aria-modal="true" aria-label="Product"><button class="x" id="cl">Close</button><div class="mini" id="mini" aria-label="Jump to another jar"></div><div class="in"><div id="big"></div><div id="txt"></div></div></div>
 <script src="main.js"></script>
 </body>
 </html>
