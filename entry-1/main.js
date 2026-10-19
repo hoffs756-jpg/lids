@@ -1,32 +1,31 @@
-// Columns: 0 name, 1 lid type, 2 jar shape, 3 size, 4 origin, 5 description, 6 ingredients,
-// 7 IMAGE (file inside the images/ folder, no leading slash).
+// Columns: 0 name, 1 description, 2 IMAGE (file inside the images/ folder, no leading slash).
 // The filter buttons match words in the image filename (plaid, red, van, black, white, silver, green, santa).
+// To add a jar, add a row to the end of this list (change the last "]];" to "]," first).
 const D=[
-["apple butter","twist","round","250 ml","idk","somthing here","somthing here","apple_red_lid.jpg"],
-["tikka masala","twist","squat","340 g","idk","somthing here","somthing here","black_lid.jpg"],
-["keep cold","twist","tall","500 ml","idk","somthing here","somthing here","blue_lid.jpg"],
-["chili oil","cloth","round","220 ml","idk","somthing here","somthing here","chili_red_lid.jpg"],
-["chobani yogurt","clamp","tall","700 ml","idk","somthing here","somthing here","chobani_white_lid.jpg"],
-["cocojune coconut","clamp","squat","500 ml","idk","somthing here","somthing here","cocojune_white_lid.jpg"],
-["salsa","twist","squat","180 g","idk","somthing here","somthing here","desertpepper_black_lid.jpg"],
-["fage greek yogurt","cork","round","330 g","idk","somthing here","somthing here","fage_white_lid.jpg"],
-["salsa","clamp","squat","120 g","idk","somthing here","somthing here","frontera_silver_lid.jpg"],
-["clarified butter","twist","round","340 g","idk","somthing here","somthing here","ghee_silver_lid.jpg"],
-["coconut yogurt","cloth","squat","200 g","idk","somthing here","somthing here","goodculture_white_lid.jpg"],
-["jam","clamp","tall","900 ml","idk","somthing here","somthing here","goodgood_black_lid.jpg"],
-["sweet pepper relish","twist","squat","210 g","idk","somthing here","somthing here","howards_red_lid.jpg"],
-["salted herring","twist","round","240 g","idk","somthing here","somthing here","maties_blue_lid.jpg"],
-["hard fruit candy ","twist","round","150 g","idk","somthing here","somthing here","mixedfruit_green_lid.jpg"],
-["australian yogurt","twist","round","454 g","idk","somthing here","somthing here","nosa_black_lid.jpg"],
-["smuckers jam","cork","squat","100 g","idk","somthing here","somthing here","plaid_lid.jpg"],
-["bone maman jam","cloth","round","250 ml","idk","somthing here","somthing here","purple_plaid_lid.jpg"],
-["caviar cream","clamp","round","380 g","idk","somthing here","somthing here","santa_caviar_lid.jpg"],
-["sturgon caviar","clamp","tall","800 ml","idk","somthing here","somthing here","sturgon_santa_white.jpg"],
-["van leeuwen blue icecream","twist","round","300 g","idk","somthing here","somthing here","van_blue_lid.jpg"],
-["van leeuwen grey icecream","twist","squat","100 g","idk","somthing here","somthing here","van_grey_lid.jpg"],
-["beech nut baby food","twist","round","250 g","idk","somthing here","somthing here","beach_green_lid.jpg"],
-["van leeuwen purple icecream","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"]];
-const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when sealed.",clamp:"Wire bail clamp over a rubber gasket. Lifts open, reseals airtight.",cork:"Natural cork stopper pushed into the neck. Not airtight; use within weeks.",cloth:"Fabric cover tied with string over a waxed disc. Traditional, short-term."};
+["apple butter","somthing here","apple_red_lid.jpg"],
+["tikka masala","somthing here","black_lid.jpg"],
+["keep cold","somthing here","blue_lid.jpg"],
+["chili oil","somthing here","chili_red_lid.jpg"],
+["chobani yogurt","somthing here","chobani_white_lid.jpg"],
+["cocojune coconut","somthing here","cocojune_white_lid.jpg"],
+["salsa","somthing here","desertpepper_black_lid.jpg"],
+["fage greek yogurt","somthing here","fage_white_lid.jpg"],
+["salsa","somthing here","frontera_silver_lid.jpg"],
+["clarified butter","somthing here","ghee_silver_lid.jpg"],
+["coconut yogurt","somthing here","goodculture_white_lid.jpg"],
+["jam","somthing here","goodgood_black_lid.jpg"],
+["sweet pepper relish","somthing here","howards_red_lid.jpg"],
+["salted herring","somthing here","maties_blue_lid.jpg"],
+["hard fruit candy","somthing here","mixedfruit_green_lid.jpg"],
+["australian yogurt","somthing here","nosa_black_lid.jpg"],
+["smuckers jam","somthing here","plaid_lid.jpg"],
+["bone maman jam","somthing here","purple_plaid_lid.jpg"],
+["caviar cream","somthing here","santa_caviar_lid.jpg"],
+["sturgon caviar","somthing here","sturgon_santa_white.jpg"],
+["van leeuwen blue icecream","somthing here","van_blue_lid.jpg"],
+["van leeuwen grey icecream","somthing here","van_grey_lid.jpg"],
+["beech nut baby food","somthing here","beach_green_lid.jpg"],
+["van leeuwen purple icecream","somthing here","van_purple_lid.jpg"]];
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
 "Placeholder text. Replace this with the story of the jar: where it came from, who made it, and why the lid caught your eye. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -36,9 +35,9 @@ const LONG=[
 // Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
 const cylText=["fill in text 1","fill in text 2","fill in text 3","fill in text 4","fill in text 5","fill in text 6"];
 const id=n=>"#"+String(n+1).padStart(3,"0");
-const jar=p=>`<img src="images/${p[7]}" alt="${p[0]}">`;
+const jar=p=>`<img src="images/${p[2]}" alt="${p[0]}">`;
 // filter key is the lowercase image filename
-const key=p=>p[7].toLowerCase();
+const key=p=>p[2].toLowerCase();
 const $=s=>document.querySelector(s),idx=$("#index"),world=$("#world");
 $("#dt").textContent=new Date().toLocaleDateString("fr-CH").replace(/\//g,".");
 D.forEach((p,i)=>{const e=document.createElement("div");e.className="cell";e.tabIndex=0;e.dataset.l=key(p);e.dataset.i=i;e.style.setProperty("--n",i);e.innerHTML=`<b>${id(i)}</b><div class="p">${jar(p)}</div>`;idx.append(e)});
@@ -76,7 +75,7 @@ document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>{document.querySe
 $("#q").oninput=e=>{Q=e.target.value.toLowerCase().trim();filt(F,true)};
 const tip=$("#tip");
 addEventListener("pointermove",e=>{tip.style.transform=`translate(${e.clientX+14}px,${e.clientY+16}px)`});
-document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]"),on=c&&!c.classList.contains("dim")&&!drag&&!$("#det").classList.contains("open");tip.classList.toggle("on",!!on);if(c)tip.textContent=D[c.dataset.i][0]+", "+D[c.dataset.i][3]});
+document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]"),on=c&&!c.classList.contains("dim")&&!drag&&!$("#det").classList.contains("open");tip.classList.toggle("on",!!on);if(c)tip.textContent=D[c.dataset.i][0]});
 // hover label
 document.addEventListener("pointerover",e=>{const c=e.target.closest("[data-i]");$("#hov").textContent=c?`${id(+c.dataset.i)} ${D[c.dataset.i][0]}`:"lids"});
 // detail: image centered on the first screen, scroll down for the text. Side key lets you jump between jars.
@@ -86,7 +85,7 @@ mini.onclick=e=>{const s=e.target.closest("[data-j]");if(s)show(+s.dataset.j)};
 let cur=0;
 function show(i){cur=i;const p=D[i];
 $("#big").innerHTML=`${jar(p)}<div class="cap">${id(i)} / ${D.length} &nbsp; ${p[0]}</div><div class="sc">Scroll &darr;</div>`;
-$("#txt").innerHTML=`<div>${id(i)} / ${D.length} &nbsp; ${p[4]}</div><h1>${p[0]}</h1><p>${p[5]}</p><dl><dt>Contents</dt><dd>${p[3]}</dd><dt>Lid</dt><dd>${p[1][0].toUpperCase()+p[1].slice(1)}. ${LID[p[1]]}</dd><dt>Jar</dt><dd>${p[2]} shoulder, clear glass</dd><dt>Ingredients</dt><dd>${p[6]}</dd><dt>Origin</dt><dd>${p[4]}</dd></dl>${LONG.map(t=>`<p>${t}</p>`).join("")}<div class="pn"><button id="pv">Previous</button><button id="nx">Next</button></div>`;
+$("#txt").innerHTML=`<div>${id(i)} / ${D.length}</div><h1>${p[0]}</h1><p>${p[1]}</p>${LONG.map(t=>`<p>${t}</p>`).join("")}<div class="pn"><button id="pv">Previous</button><button id="nx">Next</button></div>`;
 $("#pv").onclick=()=>show((i+D.length-1)%D.length);$("#nx").onclick=()=>show((i+1)%D.length);
 mini.querySelectorAll("[data-j]").forEach(s=>s.classList.toggle("on",+s.dataset.j==i));
 const on=mini.querySelector(".on");if(on)on.scrollIntoView({block:"nearest",inline:"nearest"});

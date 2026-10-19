@@ -37,9 +37,6 @@ footer{position:fixed;left:16px;right:16px;bottom:calc(8px + env(safe-area-inset
 #txt{max-width:540px;margin:0 auto;padding:60px 28px 120px;border-top:1px solid var(--fg)}
 #txt h1{font-size:clamp(34px,6vw,72px);line-height:.92;letter-spacing:-.045em;margin:10px 0 24px;font-weight:700}
 #txt p{font-size:15px;line-height:1.45;margin:0 0 20px}
-dl{display:grid;grid-template-columns:110px 1fr;border-top:1px solid var(--fg);margin:0 0 24px}
-dt,dd{margin:0;padding:7px 0;border-bottom:1px solid var(--fg)}
-dt{color:var(--mut)}
 .x{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:11;background:var(--bg)}
 .pn{display:flex;gap:6px;margin-top:28px}
 /* the little key on the side */
@@ -72,7 +69,6 @@ input::placeholder{color:var(--mut)}
 @keyframes set{from{opacity:0;transform:translateY(40px) rotate(-5deg)}}
 #txt>*{animation:fade .6s both}
 #txt>:nth-child(1){animation-delay:.45s}#txt>:nth-child(2){animation-delay:.55s}#txt>:nth-child(3){animation-delay:.65s}#txt>:nth-child(4){animation-delay:.75s}#txt>:nth-child(n+5){animation-delay:.85s}
-dd{transition:padding-left .2s}dl dt:hover+dd{padding-left:8px}
 @media (prefers-reduced-motion:reduce){#det{transition:none}*{animation:none!important;transition:none!important}}
 
 /* images */
