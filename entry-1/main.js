@@ -1,4 +1,5 @@
 // Columns: 0 name, 1 description, 2 IMAGE (file inside the images/ folder, no leading slash).
+// (Each jar's page text is NOT here: it lives in the TEXT list further down, in the same order as this list.)
 // The filter buttons match words in the image filename (plaid, red, van, black, white, silver, green,).
 // To add a jar, add a row to the end of this list (change the last "]];" to "]," first).
 const D=[
@@ -22,9 +23,9 @@ const D=[
 ["bone maman jam","somthing here","purple_plaid_lid.jpg"],
 ["caviar cream","somthing here","white_caviar_lid.jpg"],
 ["sturgon caviar","somthing here","sturgon_white.jpg"],
+["beech nut baby food","somthing here","beach_green_lid.jpg"],
 ["van leeuwen blue icecream","somthing here","van_blue_lid.jpg"],
 ["van leeuwen grey icecream","somthing here","van_grey_lid.jpg"],
-["beech nut baby food","somthing here","beach_green_lid.jpg"],
 ["van leeuwen purple icecream","somthing here","van_purple_lid.jpg"]];
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
@@ -32,6 +33,36 @@ const LONG=[
 "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
 "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."];
+// PAGE TEXT FOR EACH JAR, in the same order as the jar list at the top (001 = first jar).
+// Write your text between the backticks. A blank line starts a new paragraph.
+// Leave a pair of backticks empty (``) and that jar shows the shared LONG placeholder above instead.
+// If you add a jar to the list at the top, add one more line here at the end.
+const TEXT=[
+/* 001 apple butter */ ``,
+/* 002 tikka masala */ ``,
+/* 003 keep cold */ ``,
+/* 004 chili oil */ ``,
+/* 005 chobani yogurt */ ``,
+/* 006 cocojune coconut */ ``,
+/* 007 salsa */ ``,
+/* 008 fage greek yogurt */ ``,
+/* 009 salsa */ ``,
+/* 010 clarified butter */ ``,
+/* 011 coconut yogurt */ ``,
+/* 012 jam */ ``,
+/* 013 sweet pepper relish */ ``,
+/* 014 salted herring */ ``,
+/* 015 hard fruit candy */ ``,
+/* 016 australian yogurt */ ``,
+/* 017 smuckers jam */ ``,
+/* 018 bone maman jam */ ``,
+/* 019 caviar cream */ ``,
+/* 020 sturgon caviar */ ``,
+/* 021 beech nut baby food */ ``,
+/* 022 van leeuwen blue icecream */ ``,
+/* 023 van leeuwen grey icecream */ ``,
+/* 024 van leeuwen purple icecream */ ``,
+];
 // Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
 const cylText=[
 "A lid is small, a plain round thing,",
@@ -108,8 +139,10 @@ mini.innerHTML=D.map((q,j)=>`<span data-j="${j}" title="${q[0]}">${jar(q)}</span
 mini.onclick=e=>{const s=e.target.closest("[data-j]");if(s)show(+s.dataset.j)};
 let cur=0;
 function show(i){cur=i;const p=D[i];
+// this jar's own text from the TEXT list if you wrote any, otherwise the shared LONG placeholder paragraphs
+const own=(TEXT[i]||"").trim(),body=own?own.split(/\n\s*\n/):LONG;
 $("#big").innerHTML=`${jar(p)}<div class="cap">${id(i)} / ${D.length} &nbsp; ${p[0]}</div><div class="sc">Scroll &darr;</div>`;
-$("#txt").innerHTML=`<div>${id(i)} / ${D.length}</div><h1>${p[0]}</h1><p>${p[1]}</p>${LONG.map(t=>`<p>${t}</p>`).join("")}<div class="pn"><button id="pv">Previous</button><button id="nx">Next</button></div>`;
+$("#txt").innerHTML=`<div>${id(i)} / ${D.length}</div><h1>${p[0]}</h1><p>${p[1]}</p>${body.map(t=>`<p>${t}</p>`).join("")}<div class="pn"><button id="pv">Previous</button><button id="nx">Next</button></div>`;
 $("#pv").onclick=()=>show((i+D.length-1)%D.length);$("#nx").onclick=()=>show((i+1)%D.length);
 mini.querySelectorAll("[data-j]").forEach(s=>s.classList.toggle("on",+s.dataset.j==i));
 const on=mini.querySelector(".on");if(on)on.scrollIntoView({block:"nearest",inline:"nearest"});
