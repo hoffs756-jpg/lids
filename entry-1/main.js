@@ -38,30 +38,860 @@ const LONG=[
 // Leave a pair of backticks empty (``) and that jar shows the shared LONG placeholder above instead.
 // If you add a jar to the list at the top, add one more line here at the end.
 const TEXT=[
-/* 001 apple butter */ ``,
-/* 002 tikka masala */ ``,
-/* 003 keep cold */ ``,
-/* 004 chili oil */ ``,
-/* 005 chobani yogurt */ ``,
-/* 006 cocojune coconut */ ``,
-/* 007 salsa */ ``,
-/* 008 fage greek yogurt */ ``,
-/* 009 salsa */ ``,
-/* 010 clarified butter */ ``,
-/* 011 coconut yogurt */ ``,
-/* 012 jam */ ``,
-/* 013 sweet pepper relish */ ``,
-/* 014 salted herring */ ``,
-/* 015 hard fruit candy */ ``,
-/* 016 australian yogurt */ ``,
-/* 017 smuckers jam */ ``,
-/* 018 bone maman jam */ ``,
-/* 019 caviar cream */ ``,
-/* 020 sturgon caviar */ ``,
-/* 021 beech nut baby food */ ``,
-/* 022 van leeuwen blue icecream */ ``,
-/* 023 van leeuwen grey icecream */ ``,
-/* 024 van leeuwen purple icecream */ ``,
+
+/* 001 apple butter */ `A green garden grows
+around a red apple,
+a little piece of summer
+pressed into a circle.
+
+The leaves stretch outward,
+the fruit sits heavy and bright,
+a small red world
+held in a border of green.
+
+Somewhere, an apple
+hangs from a branch,
+ripening slowly beneath the sun,
+waiting to be picked.
+
+Here, it has been reduced
+to a picture, a symbol,
+a familiar shape
+that needs no explanation.
+
+The lid keeps the image
+of something already gone,
+a fruit made permanent
+while the real thing disappears.
+
+A garden on a jar,
+a season on a shelf,
+a small reminder
+of the things we preserve.`,
+/* 002 tikka masala */ `Black as midnight,
+a circle of dark,
+scattered with colors
+that flicker like sparks.
+
+Orange, yellow, green,
+small lights in a row,
+like windows in a city
+seen from far below.
+
+The dots gather together
+but never become one.
+Each keeps its color,
+each keeps its own sun.
+
+A little universe
+spinning in place,
+a constellation of sweets
+in a small, contained space.
+
+The lid turns slowly
+under the kitchen light.
+The colors move with it,
+then settle back into night.`,
+/* 003 keep cold */ `Blue as the cold
+that gathers on glass,
+blue as the water
+that runs from the tap.
+
+White letters circle
+a bright blue sea,
+telling the contents
+where they should be.
+
+Keep refrigerated.
+Keep cool. Keep still.
+The words make a promise
+that the cold will fulfill.
+
+A lid becomes a sign,
+a message from the shelf,
+reminding us that nothing
+can preserve itself.
+
+Beneath the blue surface,
+time moves more slowly.
+The jar waits in silence,
+its contents held closely.
+
+And when the refrigerator opens,
+the blue catches the light,
+a little frozen ocean
+in the middle of the night.`,
+/* 004 chili oil */ `A red circle shines
+like a cherry in summer,
+bright against the shelf,
+a small, vivid color.
+
+The edges catch light
+in thin rings of red,
+like ripples spreading
+where a stone has been thrown.
+
+At the center, a face
+looks out from the lid,
+surrounded by numbers
+and marks that record
+the passing of time.
+
+A date is stamped
+where a memory might go,
+a small printed record
+of something made long ago.
+
+Red is the color
+that asks to be seen.
+It does not fade quietly
+into the space between.
+
+Even among silver,
+white, black, and blue,
+the red circle calls
+the eye back to it.
+
+A little stop sign,
+a little bright flame,
+a small red surface
+that remembers its name.`,
+/* 005 chobani yogurt */ `Yellow fruit falls
+across a pale surface,
+lemon slices and leaves
+arranged in a garden.
+
+The colors overlap,
+but the center stays clear.
+A name sits among them,
+carefully placed near
+the promise of sweetness
+without the sugar.
+
+Yellow brings sunlight,
+green brings the ground,
+and white leaves space
+for the words to be found.
+
+The lid is a garden
+that never needs rain.
+Its fruit never ripens,
+never falls, never stains.
+
+It stays bright forever,
+a picture of spring,
+a small circle of plenty
+with nothing growing in it.
+
+The jar waits quietly,
+its colors on display,
+holding a little image
+of a summer day.`,
+/* 006 cocojune coconut */ `A white circle opens
+like a window to the sea,
+outlined in blue
+with a delicate symmetry.
+
+Thin lines curl gently
+around the edge,
+like waves meeting
+the side of a ledge.
+
+There is no bright fruit,
+no shouting color,
+only the quiet suggestion
+of water and summer.
+
+Coconut rests
+in the middle of the white,
+a little blue drawing
+surrounded by light.
+
+The design feels distant
+from the crowded shelf,
+like a place you visit
+when you need something else.
+
+A calm little circle,
+a breath between things,
+a reminder of beaches
+and the coolness they bring.
+
+The jar closes,
+the blue lines stay,
+a quiet little ocean
+at the end of the day.`,
+/* 007 salsa */ `Black as the night
+that settles on sand,
+gold letters curve
+around a horse standing grand.
+
+A western landscape
+appears in a circle,
+where the desert stretches
+beyond the edge of the label.
+
+The horse holds still,
+its shape printed in gold,
+a figure from somewhere
+dusty and old.
+
+The lid becomes a window
+into a place far away,
+where the sun burns bright
+and the shadows grow long.
+
+Gold catches the light
+like a trail through the dark.
+The smallest details
+leave the strongest mark.
+
+A desert in miniature,
+a story in black,
+a little imagined world
+that never looks back.`,
+/* 008 fage greek yogurt */ `Silver clouds gather
+over a lavender sky.
+A number sits quietly,
+round and open,
+a circle inside a circle,
+a promise of almost nothing.
+
+Zero percent.
+The words leave space
+for everything else
+to take its place.
+
+Purple fades softly
+into silver and gray,
+like the last light of evening
+at the end of the day.
+
+There is something strange
+about a number like zero.
+It can mean absence,
+a beginning, an ending,
+or the space before
+something appears.
+
+The lid holds its message
+without making a sound.
+A small, pale circle
+with nothing to prove.
+
+And still it catches the eye,
+because even nothing
+can have a shape.`,
+/* 009 salsa */ `The blue has faded
+around the edges,
+leaving behind
+a soft metallic shine.
+
+The name in the center
+looks almost handwritten,
+its letters winding
+like a road through time.
+
+Scratches gather
+where fingers have touched,
+small marks of opening,
+of holding, of use.
+
+The lid was once new,
+its surface untouched,
+its blue bright enough
+to stand out from the rest.
+
+Now it carries
+a different kind of beauty,
+one that comes slowly
+from being handled.
+
+A jar is emptied,
+a lid is put aside,
+but the marks remain
+on its silver-blue skin.
+
+A small object
+that was never meant
+to become a memory,
+yet somehow did.`,
+/* 010 clarified butter */ `Gold gathers around
+a blue center,
+a warm little sun
+with a red stripe crossing through.
+
+The metal catches light
+along its rounded edge,
+and the colors sit together
+like ingredients on a counter.
+
+Ghee melts slowly
+in the warmth of a pan,
+spreading into a shine
+that follows the movement
+of a spoon.
+
+The lid cannot melt,
+cannot stir, cannot taste,
+but it carries the colors
+of the food it protects.
+
+Gold feels warm,
+blue feels cool,
+and red cuts across them
+like a small ribbon.
+
+A kitchen holds many things:
+a pan, a spoon, a jar,
+the sounds of cooking,
+the smells that travel
+from one room to another.
+
+This circle keeps
+only a picture of that world,
+but it is enough
+to bring the kitchen to mind.`,
+/* 011 coconut yogurt */ `A soft gray circle
+sits quietly among the others,
+without a bright border
+or a crowded design.
+
+The words are simple,
+the letters spaced out,
+leaving room for the surface
+to breathe.
+
+Gray is the color
+of things between:
+not quite white,
+not quite black,
+not quite noticed,
+not quite unseen.
+
+It does not ask
+for the eye to stop.
+It lets the other colors
+take their turn.
+
+But look for a moment,
+and the simplicity becomes
+its own kind of pattern:
+the balance of letters,
+the space around the name,
+the silver of the lid
+showing through.
+
+There is beauty in leaving
+something unfinished,
+in knowing when to stop,
+in allowing a small circle
+to be simply itself.`,
+/* 012 jam */ `A black circle
+holds two white words,
+one above the other,
+both bold and bright.
+
+GOOD GOOD.
+
+The letters stand tall
+like buildings at night,
+their rounded shapes
+cutting through the dark.
+
+There is something playful
+about saying it twice,
+as if once were not enough,
+as if goodness could multiply
+with every repetition.
+
+The white letters
+do not blend into the surface.
+They sit on top of it,
+clear and confident,
+impossible to miss.
+
+Black makes a stage
+for the words to appear,
+and the circle becomes
+a small graphic world.
+
+Nothing extra,
+nothing to explain,
+just a name repeated
+until it becomes a rhythm.
+
+Good, good,
+round and complete,
+a little black circle
+with a bright heartbeat.`,
+/* 013 sweet pepper relish */ `A red circle
+inside a pale blue ring,
+white letters arranged
+like a sign announcing something.
+
+The name curves
+around the center,
+following the shape
+as if the words
+were meant to travel
+in a circle forever.
+
+Red is bold,
+blue is steady,
+white leaves space
+between the two.
+
+The design feels familiar,
+like a sign seen before,
+something that belongs
+to a shelf, a kitchen,
+a place where ordinary things
+are bought and brought home.
+
+The lid makes a claim
+without needing a voice.
+It promises a kind of best,
+a small declaration
+printed in red and white.
+
+And yet the circle
+is only a circle,
+the letters only letters,
+the color only color
+until someone looks.
+
+Then the red becomes a signal,
+the blue becomes a frame,
+and a simple lid
+becomes a recognizable thing.`,
+/* 014 salted herring */ `Deep blue water
+holds a little boat,
+its red and white colors
+floating against the dark.
+
+The sea is contained
+inside a metal rim,
+its horizon reduced
+to the shape of a circle.
+
+A fish swims beneath
+the printed surface,
+small and still,
+caught in a moment
+that never changes.
+
+The lid tells a story
+of somewhere distant,
+of cold water,
+of nets pulled from the sea,
+of mornings that begin
+before the sun appears.
+
+But here there are no waves,
+no salt on the skin,
+no wind pushing
+against the side of a boat.
+
+Only blue,
+and the promise of water,
+and a picture of the sea
+that can fit in one hand.
+
+The ocean is enormous.
+The lid is small.
+Still, both can hold
+the idea of something
+beyond our reach.`,
+/* 015 hard fruit candy */ `A green circle
+filled with leaves,
+orange slices,
+yellow fruit,
+and little shapes
+that seem to grow
+toward the center.
+
+The colors overlap
+like a crowded garden
+where everything ripens
+at the same time.
+
+Orange brings warmth,
+yellow brings light,
+green holds the promise
+of something alive.
+
+Fruit is temporary.
+It bruises, softens,
+changes its color,
+and disappears.
+
+But the fruit on the lid
+will never spoil.
+Its orange will stay orange,
+its green will stay green,
+its printed garden
+will never know winter.
+
+The jar opens,
+the fruit is eaten,
+the sweetness is gone.
+
+Yet the lid remains,
+still carrying the image
+of abundance,
+a little garden
+that never has to grow.`,
+/* 016 australian yogurt */ `A black circle
+holds a pale shape,
+an animal standing still
+against a dark landscape.
+
+The colors are muted,
+the surface almost rough,
+like stone worn down
+by weather and time.
+
+The animal looks outward,
+but it cannot move.
+Its body is a drawing,
+its world a label.
+
+There is something quiet
+about the contrast:
+the white shape appearing
+from the darkness,
+the black surrounding it
+without swallowing it whole.
+
+The lid holds no landscape
+beyond its edge,
+but the animal seems
+to belong somewhere else.
+
+Maybe to a field,
+maybe to a hillside,
+maybe to a place
+where nothing is printed
+and everything can move.
+
+For now, it stays here,
+a small figure
+on a small circle,
+waiting to be noticed.`,
+/* 017 smuckers jam */ `Red and white squares
+spread across the surface,
+a picnic pattern
+made round and bright.
+
+The gingham looks familiar,
+like a tablecloth
+laid out on grass,
+like a summer afternoon
+that lasts a little longer
+than expected.
+
+In the center,
+a small button waits.
+
+Press it,
+and the lid answers.
+
+A pop breaks the silence,
+a tiny sound
+that tells you
+the seal has changed.
+
+Something once closed
+has become open.
+Something once protected
+is ready to be reached.
+
+The red checks remain,
+steady and unchanged,
+even after the sound
+has disappeared.
+
+A little pattern
+made to look like fabric,
+a small circle of metal
+that remembers the feeling
+of a picnic table.`,
+/* 018 bone maman jam */ `Purple squares
+alternate with white,
+a pattern that repeats
+until the eye begins
+to follow its own path.
+
+Dark, light,
+dark, light,
+a rhythm without sound,
+a grid without numbers.
+
+The pattern recalls fabric,
+a piece of cloth
+folded over a basket,
+spread across a table,
+held down at the corners
+by the weight of the day.
+
+But this cloth
+has no threads,
+no loose edges,
+no place where it can tear.
+
+It is printed flat
+onto a circle,
+a pattern pretending
+to be something softer.
+
+Purple gives it
+a little unexpectedness,
+a color between
+the warmth of red
+and the calm of blue.
+
+The squares stay in place,
+each one beside another,
+a little order
+repeated without end.`,
+/* 019 caviar cream */ `Silver edges
+surround a pale blue sea,
+where a small red figure
+stands above the words.
+
+The center is quiet,
+almost like a shoreline
+seen through mist.
+
+Little fish and shapes
+gather near the bottom,
+a suggestion of water
+beneath the printed name.
+
+The lid is metallic,
+but the picture feels soft,
+like something glimpsed
+through a window
+on a cloudy day.
+
+Caviar belongs to the sea,
+to dark water
+and hidden depths,
+to things collected
+from a world
+that rarely stands still.
+
+Here, the sea
+has been made circular,
+contained by a rim
+that fits in the hand.
+
+The water cannot move.
+The fish cannot swim.
+But the image remains,
+a small blue memory
+of somewhere deeper.`,
+/* 020 sturgon caviar */ `Cream and silver
+blend into a quiet circle,
+the colors of a shoreline
+before the sun rises.
+
+The words sit gently
+on the pale surface,
+leaving open space
+between each letter.
+
+There is no bright blue sea
+and no dramatic wave,
+only the suggestion
+of something underwater,
+something that lives
+beneath the surface.
+
+Sturgeon move through
+deep and changing waters,
+their bodies carrying
+a history older
+than the printed label.
+
+The lid makes this world
+look still and simple,
+as though the sea
+could be reduced
+to a name and a circle.
+
+But beneath the calm
+is another kind of life,
+slow and ancient,
+moving through water
+that cannot be seen.
+
+The silver rim
+catches the light.
+The cream surface
+holds its quiet.
+
+A little circle
+with a world beneath it.`,
+/* 021 beech nut baby food */ `Green fills the circle
+like leaves after rain,
+bright and full
+of growing things.
+
+A name sits in white,
+clear against the green,
+surrounded by small marks
+that hint at the natural world.
+
+The design brings to mind
+a garden in spring,
+the first leaves opening,
+the ground waking up
+after a long winter.
+
+Green is the color
+of things beginning,
+of stems reaching upward,
+of food that grows
+before it is gathered.
+
+The lid carries that color
+without ever changing,
+without needing sunlight,
+without needing soil.
+
+The garden is a picture,
+but the promise is real:
+something inside
+will be opened,
+something will be eaten,
+and the circle will remain.
+
+A little green world
+that sits in the hand,
+small enough to overlook,
+bright enough to remember.`,
+/* 022 van leeuwen blue icecream */ `A deep blue circle
+holds a name in black,
+the letters flowing
+like chocolate
+across the surface.
+
+The blue is bright
+but not quite loud,
+like the color of water
+under a clear sky.
+
+Peanut and chocolate
+meet in the middle,
+two familiar flavors
+pressed into one.
+
+The lid carries
+the promise of sweetness,
+of something rich
+and something smooth,
+of a spoon scraping
+the last bit from the jar.
+
+Its lettering feels loose,
+almost handwritten,
+like a word drawn quickly
+without lifting a pen.
+
+The circle is simple,
+but the contrast stays:
+blue beneath black,
+sweetness beneath a seal.
+
+When the jar is empty,
+the blue will still be blue,
+the name will still curve,
+and the little circle
+will hold the memory
+of what was once inside.`,
+/* 023 van leeuwen grey icecream */ `Gray like a cloudy sky,
+black like ink,
+a circle that holds
+its colors close.
+
+The words stretch
+across the surface
+in a loose, flowing script,
+like a signature
+written in one movement.
+
+There is something understated
+about the design.
+No bright fruit,
+no colorful pattern,
+no picture asking
+to be looked at.
+
+Only gray and black,
+a small contrast
+that makes the name
+feel almost handwritten
+on a piece of paper.
+
+Chocolate belongs
+to darker colors,
+to the warmth of brown,
+to the richness of something
+that melts slowly.
+
+The lid does not show
+the chocolate itself.
+It gives only a name,
+a hint, a suggestion
+of what waits beneath.
+
+The gray remains cool,
+the lettering remains dark,
+and the sweetness stays hidden
+until the circle is opened.`,
+/* 024 van leeuwen purple icecream */ `Purple spreads
+across the surface,
+soft and bright
+like the sky
+just after sunset.
+
+Black letters curve
+around the center,
+their shapes stretching
+like a ribbon
+across a field of color.
+
+The lid feels playful,
+almost like a sweet
+wrapped in paper,
+a little gift
+waiting to be opened.
+
+Dulce de leche:
+milk and sugar
+changed by time and heat
+into something golden,
+something thick,
+something sweet.
+
+The purple does not show
+the caramel inside,
+but it gives the sweetness
+a different kind of identity.
+
+A color can become
+part of a flavor,
+even when it cannot
+be tasted.
+
+The jar may empty,
+the caramel may disappear,
+but the purple circle
+will remain for a while,
+a little piece of sweetness
+without the sweet.`
 ];
 // Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
 const cylText=[
