@@ -24,8 +24,7 @@ const D=[
 ["from the sea","clamp","tall","800 ml","idk","somthing here","somthing here","sturgon_santa_white.jpg"],
 ["blue ice","twist","round","300 g","idk","somthing here","somthing here","van_blue_lid.jpg"],
 ["grey ice","twist","squat","100 g","idk","somthing here","somthing here","van_grey_lid.jpg"],
-["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"],
-["beach green","twist","round","250 g","idk","somthing here","somthing here","beach_green_lid.jpg"]];
+["purple ice","twist","round","280 g","idk","somthing here","somthing here","van_purple_lid.jpg"]];
 const LID={twist:"Twist-off metal lid with lugs. A safety button pops down when sealed.",clamp:"Wire bail clamp over a rubber gasket. Lifts open, reseals airtight.",cork:"Natural cork stopper pushed into the neck. Not airtight; use within weeks.",cloth:"Fabric cover tied with string over a waxed disc. Traditional, short-term."};
 // Long-ish placeholder paragraphs shown below the image on the detail page. Edit freely.
 const LONG=[
@@ -104,7 +103,6 @@ filt("all");
 const cover=$("#cover"),intro=$("#intro"),T=950;
 let tm;const later=f=>{clearTimeout(tm);tm=setTimeout(f,T)};
 const lock=on=>{document.body.style.overflow=on?"hidden":"";document.querySelectorAll(".bar,nav,main,footer").forEach(e=>e.inert=on)};
-$("#cn").textContent=D.length;
 lock(true);
 $("#go").onclick=()=>{cover.classList.add("open");later(()=>lock(false))};
 $("#gi").onclick=()=>{intro.classList.remove("open");intro.hidden=false;intro.scrollTop=0;void intro.offsetWidth;cover.classList.add("open");later(()=>$("#ic").focus())};
