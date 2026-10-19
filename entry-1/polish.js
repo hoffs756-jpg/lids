@@ -4,11 +4,10 @@
 const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FINE=matchMedia("(hover:hover) and (pointer:fine)").matches;
 const root=document.documentElement,nav=$("nav"),det=$("#det"),txt=$("#txt");
-const DEFAULT_MOOD="hsl(330 100% 92%)";
 
 // ---------- each jar gets a color pulled from its lid photo ----------
-// (If the browser blocks reading pixels, e.g. opening the file straight from disk, it falls back to a pretty pastel per jar.)
-const COL=D.map((_,i)=>`hsl(${(i*47)%360} 78% 80%)`);
+// (Black, white and silver lids, or a browser that blocks reading pixels e.g. opening the file straight from disk, get a soft neutral grey glow.)
+const COL=D.map(()=>"hsl(0 0% 78%)");
 function lidColor(img){
   try{
     const c=document.createElement("canvas"),n=24;c.width=c.height=n;
@@ -23,7 +22,7 @@ function lidColor(img){
       let hh=mx==r?((g-b)/dl)%6:mx==g?(b-r)/dl+2:(r-g)/dl+4;hh*=60;if(hh<0)hh+=360;
       sx+=Math.cos(hh*Math.PI/180);sy+=Math.sin(hh*Math.PI/180);sat+=s;k++;
     }
-    if(k<n*n*.08)return null;                                  // mostly grey/black/white lid: keep the pastel fallback
+    if(k<n*n*.08)return null;                                  // mostly grey/black/white lid: keep the neutral glow
     let hue=Math.atan2(sy,sx)*180/Math.PI;if(hue<0)hue+=360;
     return `hsl(${Math.round(hue)} ${Math.round(Math.max(55,Math.min(90,sat/k*100)))}% 76%)`;
   }catch(e){return null}
@@ -39,22 +38,6 @@ D.forEach((_,i)=>{
   const go=()=>{const c=lidColor(img);if(c){COL[i]=c;paint(i)}};
   img.complete?go():img.addEventListener("load",go,{once:true});
 });
-
-// ---------- the page mood follows whichever jar you hover ----------
-document.addEventListener("pointerover",e=>{
-  const c=e.target.closest(".cell");
-  if(c){if(!c.classList.contains("dim"))root.style.setProperty("--mood",COL[c.dataset.i])}
-  else if(!e.target.closest(".t"))root.style.setProperty("--mood",DEFAULT_MOOD);
-});
-
-// ---------- a ticker of your cylinder poem under the nav ----------
-if(typeof cylText!=="undefined"&&cylText.length){
-  const m=document.createElement("div");m.className="marq";m.setAttribute("aria-hidden","true");
-  const line=cylText.map(t=>`<span>${t}</span><i></i>`).join("");
-  m.innerHTML=`<div>${line}${line}</div>`;
-  nav.after(m);
-  document.querySelectorAll("[data-v]").forEach(b=>b.addEventListener("click",()=>{m.hidden=b.dataset.v!=="index"}));
-}
 
 // ---------- sphere + cylinder: tiles get their color, and the back ones fade ----------
 let tiles=[];
