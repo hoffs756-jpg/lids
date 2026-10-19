@@ -33,7 +33,31 @@ const LONG=[
 "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
 "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet."];
 // Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
-const cylText=["fill in text 1","fill in text 2","fill in text 3","fill in text 4","fill in text 5","fill in text 6"];
+const cylText=[
+"A lid is small, a plain round thing,",
+"yet look at what it chooses to sing.",
+"A pattern, a color, a tiny mark",
+"can light a shelf up from the dark.",
+"Gingham tied with a bit of string",
+"says home, says jam, says everything.",
+"Metal ridged and gold and round",
+"keeps the summer safe and sound.",
+"Twist it, hear the button pop,",
+"the whole warm summer will not stop.",
+"A pint of cold, a stripe of blue,",
+"you know that brand, you always knew.",
+"Red, and you're reaching, no need to look;",
+"it's written in color, like a book.",
+"White says cream, black says spice,",
+"purple costs more, but worth the price.",
+"The book holds lids in ink and page,",
+"the site sets circles on a stage.",
+"A pattern leads to its cousin's door,",
+"a color leads you to explore.",
+"No grand design, no loud display,",
+"just one red chosen the careful way.",
+"Made to open, made to throw,",
+"each one was chosen, and now you know."];
 const id=n=>"#"+String(n+1).padStart(3,"0");
 const jar=p=>`<img src="images/${p[2]}" alt="${p[0]}">`;
 // filter key is the lowercase image filename
@@ -51,7 +75,7 @@ t.className="t";t.dataset.l=key(p);t.dataset.i=k;t.innerHTML=jar(p);
 t.style.transform=`rotateY(${th*180/Math.PI}deg) rotateX(${90-phi*180/Math.PI}deg) translateZ(${Math.min(innerWidth,innerHeight)*.34}px)`;world.append(t)})}
 else{
 // cylinder: text only, one tile per jar. 7 per ring, last ring is partial.
-const per=7,R=Math.max(240,per*46/6.28);
+const per=8,R=Math.max(240,per*46/6.28);
 for(let i=0;i<n;i++){const r=Math.floor(i/per),k=i%per,t=document.createElement("div"),a=k*360/per+r*8;
 t.className="t tx sm";t.textContent=cylText[i%cylText.length];t.style.transform=`translateY(${(r-1.5)*118}px) rotateY(${a}deg) translateZ(${R}px)`;world.append(t)}}}
 function loop(){if(view!="index"){if(!drag){vy+=(.25-vy)*.015;ry+=vy}world.style.transform=`translateZ(${view=="cyl"?-140:0}px) rotateX(${view=="cyl"?-18:rx}deg) rotateY(${ry}deg)`}requestAnimationFrame(loop)}loop();
