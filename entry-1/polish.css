@@ -74,11 +74,6 @@ transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1
 .lid-title img{mix-blend-mode:normal}
 
 /* ================= intro page ================= */
-.intro{background:
-radial-gradient(40% 30% at 15% 10%,hsl(330 100% 94%),transparent 70%),
-radial-gradient(35% 30% at 88% 30%,hsl(205 100% 93%),transparent 70%),
-radial-gradient(40% 35% at 20% 85%,hsl(45 100% 92%),transparent 70%),
-radial-gradient(40% 35% at 85% 92%,hsl(150 75% 92%),transparent 70%),#fff}
 .intro-bar{background:color-mix(in srgb,#fff 70%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .intro-in>div:first-child{display:flex;align-items:center;gap:10px;color:var(--mut)}
 .intro-in>div:first-child::after{content:"";flex:1;height:1px;background:var(--fg);opacity:.25}
