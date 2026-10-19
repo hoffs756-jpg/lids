@@ -1,5 +1,5 @@
 // Columns: 0 name, 1 description, 2 IMAGE (file inside the images/ folder, no leading slash).
-// The filter buttons match words in the image filename (plaid, red, van, black, white, silver, green, santa).
+// The filter buttons match words in the image filename (plaid, red, van, black, white, silver, green,).
 // To add a jar, add a row to the end of this list (change the last "]];" to "]," first).
 const D=[
 ["apple butter","somthing here","apple_red_lid.jpg"],
@@ -20,8 +20,8 @@ const D=[
 ["australian yogurt","somthing here","nosa_black_lid.jpg"],
 ["smuckers jam","somthing here","plaid_lid.jpg"],
 ["bone maman jam","somthing here","purple_plaid_lid.jpg"],
-["caviar cream","somthing here","santa_caviar_lid.jpg"],
-["sturgon caviar","somthing here","sturgon_santa_white.jpg"],
+["caviar cream","somthing here","white_caviar_lid.jpg"],
+["sturgon caviar","somthing here","sturgon_white.jpg"],
 ["van leeuwen blue icecream","somthing here","van_blue_lid.jpg"],
 ["van leeuwen grey icecream","somthing here","van_grey_lid.jpg"],
 ["beech nut baby food","somthing here","beach_green_lid.jpg"],
