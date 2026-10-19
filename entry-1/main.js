@@ -895,30 +895,31 @@ without the sweet.`
 ];
 // Text shown on the cylinder tiles (text only, no images). Fill these in; they repeat if there are fewer than tiles.
 const cylText=[
-"A lid is small, a plain round thing,",
-"yet look at what it chooses to sing.",
-"A pattern, a color, a tiny mark",
-"can light a shelf up from the dark.",
-"Gingham tied with a bit of string",
-"says home, says jam, says everything.",
-"Metal ridged and gold and round",
-"keeps the summer safe and sound.",
-"Twist it, hear the button pop,",
-"the whole warm summer will not stop.",
-"A pint of cold, a stripe of blue,",
-"you know that brand, you always knew.",
-"Red, and you're reaching, no need to look;",
-"it's written in color, like a book.",
-"White says cream, black says spice,",
-"purple costs more, but worth the price.",
-"The book holds lids in ink and page,",
-"the site sets circles on a stage.",
-"A pattern leads to its cousin's door,",
-"a color leads you to explore.",
-"No grand design, no loud display,",
-"just one red chosen the careful way.",
-"Made to open, made to throw,",
-"each one was chosen, and now you know."];
+"Looking closely at food lids reveals how much information can exist within a small, familiar object.",
+"Through this collection, individual lids become a way to explore the relationship between packaging, visual identity, and everyday experience.",
+"Colors, patterns, materials, and typography each contribute to the character of a product,",
+"often creating associations that feel familiar before we even read a label.",
+"What might initially seem like a simple metal circle becomes a surface that communicates through its appearance.",
+"This website continues the exploration introduced in the book,",
+"offering a different way to navigate and understand the collection.",
+"Rather than following a fixed sequence, the lids can be explored through an index of individual examples,",
+"visual categories, colors, and shapes.",
+"This structure makes it possible to notice connections between objects that might otherwise seem unrelated,",
+"revealing repeated design choices and unexpected similarities across different products.",
+"The website acts as both a reference and an extension of the book, allowing the collection to be revisited from new perspectives.",
+"Organizing the lids this way also highlights how design operates through repetition and variation.",
+"Similar colors can communicate different things depending on their context,",
+"while a familiar pattern can take on a new meaning when it appears on another product.",
+"Some lids stand out through bold graphics and bright colors,",
+"while others rely on subtle details, restrained typography, or the texture of their materials.",
+"Together, these differences demonstrate how visual identity is built through individual decisions that contribute to a product's overall appearance.",
+"Ultimately, this collection is an invitation to look more carefully at the objects that surround us.",
+"Food lids are usually handled briefly and discarded or set aside once their purpose is fulfilled,",
+"but their designs can reveal patterns of recognition, cultural associations, and the ways products distinguish themselves from one another.",
+"By collecting, documenting, and organizing these objects, something ordinary becomes an opportunity for closer observation.",
+"The website extends that process beyond the physical book,",
+"creating an ongoing visual index of objects that are easy to overlook but full of details worth noticing."];
+
 const id=n=>"#"+String(n+1).padStart(3,"0");
 const jar=p=>`<img src="images/${p[2]}" alt="${p[0]}">`;
 // filter key is the lowercase image filename
@@ -936,7 +937,7 @@ t.className="t";t.dataset.l=key(p);t.dataset.i=k;t.innerHTML=jar(p);
 t.style.transform=`rotateY(${th*180/Math.PI}deg) rotateX(${90-phi*180/Math.PI}deg) translateZ(${Math.min(innerWidth,innerHeight)*.34}px)`;world.append(t)})}
 else{
 // cylinder: text only, one tile per jar. 7 per ring, last ring is partial.
-const per=8,R=Math.max(240,per*46/6.28);
+const per=8,R=Math.max(290,per*46/6.28);
 for(let i=0;i<n;i++){const r=Math.floor(i/per),k=i%per,t=document.createElement("div"),a=k*360/per+r*8;
 t.className="t tx sm";t.textContent=cylText[i%cylText.length];t.style.transform=`translateY(${(r-1.5)*118}px) rotateY(${a}deg) translateZ(${R}px)`;world.append(t)}}}
 function loop(){if(view!="index"){if(!drag){vy+=(.25-vy)*.015;ry+=vy}world.style.transform=`translateZ(${view=="cyl"?-140:0}px) rotateX(${view=="cyl"?-18:rx}deg) rotateY(${ry}deg)`}requestAnimationFrame(loop)}loop();
