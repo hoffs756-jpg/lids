@@ -3,8 +3,6 @@ padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bott
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:12px/1.25 "Thonburi","Helvetica Neue",Helvetica,Arial,sans-serif;min-height:100vh}
-.bar{display:flex;justify-content:space-between;gap:12px;padding:10px 16px 4px;border-bottom:1px solid var(--fg);margin:0 16px;padding-left:0;padding-right:0;flex-wrap:wrap}
-.bar span:nth-child(2){margin-right:auto;margin-left:28px}
 nav{display:flex;gap:6px;flex-wrap:wrap;padding:12px 16px 0}
 button{font:inherit;color:inherit;background:none;border:1px solid var(--fg);padding:4px 10px;cursor:pointer;border-radius:0}
 button:hover,button[aria-pressed=true]{background:var(--fg);color:var(--bg)}

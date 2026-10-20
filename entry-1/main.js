@@ -925,7 +925,6 @@ const jar=p=>`<img src="images/${p[2]}" alt="${p[0]}">`;
 // filter key is the lowercase image filename
 const key=p=>p[2].toLowerCase();
 const $=s=>document.querySelector(s),idx=$("#index"),world=$("#world");
-$("#dt").textContent=new Date().toLocaleDateString("fr-CH").replace(/\//g,".");
 D.forEach((p,i)=>{const e=document.createElement("div");e.className="cell";e.tabIndex=0;e.dataset.l=key(p);e.dataset.i=i;e.style.setProperty("--n",i);e.innerHTML=`<b>${id(i)}</b><div class="p">${jar(p)}</div>`;idx.append(e)});
 // 3D
 let ry=0,rx=-8,vy=.25,drag=0,moved=0,view="index",ox,oy;
